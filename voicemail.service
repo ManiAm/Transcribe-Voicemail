@@ -1,0 +1,17 @@
+[Unit]
+Description=Transcribe-Voicemail FastAPI Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/Transcribe-Voicemail
+ExecStart=/root/venv/bin/uvicorn main:app --host 0.0.0.0 --port 5000
+Restart=always
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=transcribe-voicemail
+
+[Install]
+WantedBy=multi-user.target
