@@ -15,13 +15,6 @@ Begin by connecting to your FreePBX host and install the required dependency:
 
     sudo apt install jq
 
-Next, install Docker to allow container-based services to run alongside FreePBX:
-
-    curl -fsSL https://get.docker.com | sudo bash
-    sudo usermod -aG docker $USER
-
-You must log out and back in (or restart the shell session) after adding your user to the docker group for the permissions to take effect.
-
 Clone the project repository to your FreePBX host:
 
     cd ~
